@@ -1,0 +1,27 @@
+{
+  "name": "@hexlet/code",
+  "dependencies": {
+    "node": "^19.6.1"
+  },
+  "description": "[![Actions Status](https://github.com/Rigoprogrammist/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Rigoprogrammist/frontend-project-44/actions)",
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rigoprogrammist/frontend-project-44.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rigoprogrammist/frontend-project-44/issues"
+  },
+  "homepage": "https://github.com/Rigoprogrammist/frontend-project-44#readme"
+}
