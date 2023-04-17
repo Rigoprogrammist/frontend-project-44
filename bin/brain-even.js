@@ -11,7 +11,7 @@ const isEven = (num) => {
   }
   return false;
 };
-isEven();
+
 
 const firstmessage =
   'Answer "yes" if the number is even, otherwise answer "no".';
