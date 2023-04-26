@@ -1,9 +1,6 @@
 /* eslint-disable no-alert, no-console */
-import readlineSync from 'readline-sync';
-import greeting from '../src/cli.js';
-
-
-
+import readlineSync from "readline-sync";
+import greeting from "../src/cli.js";
 
 const isEven = (num) => {
   if (num % 2 === 0) {
@@ -11,7 +8,6 @@ const isEven = (num) => {
   }
   return false;
 };
-
 
 const firstmessage =
   'Answer "yes" if the number is even, otherwise answer "no".';
