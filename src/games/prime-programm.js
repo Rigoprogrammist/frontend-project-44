@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import greeting from '../cli.js';
-import { isCheckRound } from '../module.js';
+import isCheckRound from '../module.js';
 
 const firstmessage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 

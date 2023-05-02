@@ -2,7 +2,7 @@
 /* eslint-disable no-alert, no-console */
 import readlineSync from 'readline-sync';
 import greeting from '../cli.js';
-import { isCheckRound } from '../module.js';
+import isCheckRound from '../module.js';
 
 const firstmessage = 'What number is missing in the progression?';
 

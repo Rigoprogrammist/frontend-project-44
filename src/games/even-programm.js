@@ -2,7 +2,7 @@
 
 import readlineSync from 'readline-sync';
 import greeting from '../cli.js';
-import { isCheckRound } from '../module.js';
+import isCheckRound from '../module.js';
 
 const isEven = (num) => {
   if (num % 2 === 0) {
