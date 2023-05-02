@@ -3,8 +3,8 @@ import readlineSync from 'readline-sync';
 import greeting from '../cli.js';
 import { isCheckRound } from '../module.js';
 
-const firstmessage =
-  'Answer "yes" if given numberber is prime. Otherwise answer "no".';
+const firstmessage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 
 
 
@@ -27,7 +27,6 @@ const primeGame = () => {
   for (let roundtimer = 1; roundtimer <= 3; roundtimer += 1) {
     const Randomnumber = Math.floor(Math.random() * 11);
     const theAnswer = isPrime(Randomnumber) ? "yes" : "no";
-    
     console.log(`Question: ${Randomnumber}`);
     const enteredResponse = readlineSync.question(
       `Your answer: `
