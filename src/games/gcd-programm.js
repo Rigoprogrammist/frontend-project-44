@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* eslint-disable no-alert, no-console */
+
 import readlineSync from 'readline-sync';
 import greeting from '../cli.js';
 
