@@ -5,9 +5,6 @@ import { isCheckRound } from '../module.js';
 
 const firstmessage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-
-
-
 const isPrime = (number) => {
   if (number <= 1) {
     return false;
@@ -26,10 +23,10 @@ const primeGame = () => {
   console.log(firstmessage);
   for (let roundtimer = 1; roundtimer <= 3; roundtimer += 1) {
     const Randomnumber = Math.floor(Math.random() * 11);
-    const theAnswer = isPrime(Randomnumber) ? "yes" : "no";
+    const theAnswer = isPrime(Randomnumber) ? 'yes' : 'no';
     console.log(`Question: ${Randomnumber}`);
     const enteredResponse = readlineSync.question(
-      `Your answer: `
+      'Your answer: ',
     );
     const result = isCheckRound(theAnswer, enteredResponse, name, roundtimer);
     if (result === false) {
@@ -39,6 +36,3 @@ const primeGame = () => {
 };
 
 export default primeGame;
-
-
-    

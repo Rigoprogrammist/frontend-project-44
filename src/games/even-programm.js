@@ -11,11 +11,7 @@ const isEven = (num) => {
   return false;
 };
 
-
-const firstmessage =
-  'Answer "yes" if the number is even, otherwise answer "no".';
-
-
+const firstmessage = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const even = () => {
   const name = greeting();
@@ -23,16 +19,16 @@ const even = () => {
   for (let roundtimer = 1; roundtimer <= 3; roundtimer += 1) {
     const RandomNum = Math.floor(Math.random() * 100);
     const QuestionNumber = RandomNum;
-    const theAnswer = isEven(QuestionNumber) ? "yes" : "no";
+    const theAnswer = isEven(QuestionNumber) ? 'yes' : 'no';
     console.log(`Question: ${QuestionNumber}`);
     const enteredResponse = readlineSync.question(
-      `Your answer: `
+      'Your answer: ',
     );
     const result = isCheckRound(
       theAnswer,
       enteredResponse,
       name,
-      roundtimer
+      roundtimer,
     );
     if (result === false) {
       break;
@@ -40,6 +36,4 @@ const even = () => {
   }
 };
 
-
 export default even;
-

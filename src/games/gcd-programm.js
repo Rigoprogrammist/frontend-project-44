@@ -4,9 +4,7 @@ import readlineSync from 'readline-sync';
 import greeting from '../cli.js';
 import { isCheckRound } from '../module.js';
 
-const firstmessage = "Find the greatest common divisor of given numbers.";
-
-
+const firstmessage = 'Find the greatest common divisor of given numbers.';
 
 const LogicGcd = (num1, num2) => {
   if (num2 > num1) {
@@ -29,7 +27,7 @@ const GCdivisor = () => {
     const response = `${LogicGcd(RandomNum1, RandomNum2)}`;
     const theAnswer = response;
     console.log(`Question: ${task}`);
-    const enteredResponse = readlineSync.question(`Your answer: `);
+    const enteredResponse = readlineSync.question('Your answer: ');
     const result = isCheckRound(theAnswer, enteredResponse, name, roundtimer);
     if (result === false) {
       break;
