@@ -4,10 +4,7 @@ import readlineSync from 'readline-sync';
 import greeting from '../cli.js';
 import { isCheckRound } from '../module.js';
 
-const firstmessage =
-'What number is missing in the progression?';
-
-
+const firstmessage = "What number is missing in the progression?";
 
 const Progression = () => {
   const ourProgressionArr = [];
@@ -21,30 +18,26 @@ const Progression = () => {
   return ourProgressionArr;
 };
 
-
-
-
 const progressionGame = () => {
   const name = greeting();
   console.log(firstmessage);
   for (let roundtimer = 1; roundtimer <= 3; roundtimer += 1) {
     const startprogression = Progression();
-      const max = startprogression.length - 1;
+    const max = startprogression.length - 1;
     const hiddenElement = Math.floor(Math.random() * (max - 0 + 1) + 0);
     const response = startprogression[hiddenElement];
- const theAnswer = response;
-    startprogression[hiddenElement] = '..';
-    const task = startprogression.join(' ');
+    const theAnswer = response;
+    startprogression[hiddenElement] = "..";
+    const task = startprogression.join(" ");
     const enteredResponse = readlineSync.question(`Question: ${task}\n`);
-  const result = isCheckRound(theAnswer, +enteredResponse, name, roundtimer);
+    const result = isCheckRound(theAnswer, +enteredResponse, name, roundtimer);
     if (result === false) {
       break;
     }
   }
 };
 
-
-export default progressionGame
+export default progressionGame;
 
   
 
