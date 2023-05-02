@@ -2,7 +2,7 @@
 
 import readlineSync from 'readline-sync';
 import greeting from '../cli.js';
-
+import { isCheckRound } from '../module.js';
 
 const isEven = (num) => {
   if (num % 2 === 0) {
@@ -15,29 +15,12 @@ const isEven = (num) => {
 const firstmessage =
   'Answer "yes" if the number is even, otherwise answer "no".';
 
-const isCheckRound = (theAnswer, enteredResponse, name, roundPosition) => {
-  let result = true;
-  if (roundPosition >= 3 && theAnswer === enteredResponse) {
-    console.log("Correct!");
-    console.log(`Congratulations, ${name}!`);
-    return result;
-  }
-  if (theAnswer === enteredResponse) {
-    console.log("Correct!");
-    return result;
-  }
-  result = false;
-  console.log(
-    `'${enteredResponse}' is wrong answer ;(. Correct answer was '${theAnswer}'.`
-  );
-  console.log(`Let's try again, ${name}!`);
-  return result;
-};
+
 
 const even = () => {
   const name = greeting();
   console.log(firstmessage);
-  for (let roundPosition = 1; roundPosition <= 3; roundPosition += 1) {
+  for (let roundtimer = 1; roundtimer <= 3; roundtimer += 1) {
     const RandomNum = Math.floor(Math.random() * 100);
     const QuestionNumber = RandomNum;
 
@@ -49,7 +32,7 @@ const even = () => {
       theAnswer,
       enteredResponse,
       name,
-      roundPosition
+      roundtimer
     );
     if (result === false) {
       break;

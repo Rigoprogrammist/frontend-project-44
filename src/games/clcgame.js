@@ -2,29 +2,13 @@
 
 import readlineSync from 'readline-sync';
 import greeting from '../cli.js';
+import { isCheckRound } from '../module.js';
 
 const firstmessage =
 'What is the result of the expression?';
 
 
-const isCheckRound = (theAnswer, enteredResponse, name, roundPosition) => {
-    let result = true;
-    if (roundPosition >= 3 && theAnswer === enteredResponse) {
-      console.log("Correct!");
-      console.log(`Congratulations, ${name}!`);
-      return result;
-    }
-    if (theAnswer === enteredResponse) {
-      console.log("Correct!");
-      return result;
-    }
-    result = false;
-    console.log(
-      `'${enteredResponse}' is wrong answer ;(. Correct answer was '${theAnswer}'.`
-    );
-    console.log(`Let's try again, ${name}!`);
-    return result;
-  };
+
   
 
 const calculator = (operand, RandomNum1, RandomNum2) => {
@@ -43,7 +27,7 @@ const calculator = (operand, RandomNum1, RandomNum2) => {
     const name = greeting();
     console.log(firstmessage);
     const operands = ['+', '-', '*'];
-    for (let roundPosition = 1; roundPosition <= 3; roundPosition += 1) {
+    for (let roundtimer = 1; roundtimer <= 3; roundtimer += 1) {
         const RandomNum1 = Math.floor(Math.random() * 100);
         const RandomNum2 = Math.floor(Math.random() * 100);
       const operand = operands[Math.floor(Math.random() * 3)];
@@ -55,7 +39,7 @@ const calculator = (operand, RandomNum1, RandomNum2) => {
         theAnswer,
         enteredResponse,
         name,
-        roundPosition
+        roundtimer
       );
       if (result === false) {
         break;
