@@ -27,8 +27,10 @@ const primeGame = () => {
   for (let roundtimer = 1; roundtimer <= 3; roundtimer += 1) {
     const Randomnumber = Math.floor(Math.random() * 11);
     const theAnswer = isPrime(Randomnumber) ? "yes" : "no";
+    
+    console.log(`Question: ${Randomnumber}`);
     const enteredResponse = readlineSync.question(
-      `Question: ${Randomnumber}\n`
+      `Your answer: `
     );
     const result = isCheckRound(theAnswer, enteredResponse, name, roundtimer);
     if (result === false) {

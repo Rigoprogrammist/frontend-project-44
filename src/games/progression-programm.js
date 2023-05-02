@@ -29,7 +29,8 @@ const progressionGame = () => {
     const theAnswer = response;
     startprogression[hiddenElement] = "..";
     const task = startprogression.join(" ");
-    const enteredResponse = readlineSync.question(`Question: ${task}\n`);
+    console.log(`Question: ${task}`);
+    const enteredResponse = readlineSync.question(`Your answer: `);
     const result = isCheckRound(theAnswer, +enteredResponse, name, roundtimer);
     if (result === false) {
       break;

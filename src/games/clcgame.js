@@ -34,7 +34,8 @@ const calculator = (operand, RandomNum1, RandomNum2) => {
       const task = `${RandomNum1} ${operand} ${RandomNum2}`;
       const response = calculator(operand, RandomNum1, RandomNum2);
       const theAnswer = response;
-      const enteredResponse = readlineSync.question(`Question: ${task}\n`);
+      console.log(`Question: ${task}`);
+      const enteredResponse = readlineSync.question(`Your answer: `);
       const result = isCheckRound(
         theAnswer,
         enteredResponse,

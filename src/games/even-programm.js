@@ -23,10 +23,10 @@ const even = () => {
   for (let roundtimer = 1; roundtimer <= 3; roundtimer += 1) {
     const RandomNum = Math.floor(Math.random() * 100);
     const QuestionNumber = RandomNum;
-
     const theAnswer = isEven(QuestionNumber) ? "yes" : "no";
+    console.log(`Question: ${QuestionNumber}`);
     const enteredResponse = readlineSync.question(
-      `Question: ${QuestionNumber}\n`
+      `Your answer: `
     );
     const result = isCheckRound(
       theAnswer,
