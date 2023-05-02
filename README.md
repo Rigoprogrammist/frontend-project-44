@@ -5,7 +5,12 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/eb43e7feeac3a3aa609a/maintainability)](https://codeclimate.com/github/Rigoprogrammist/frontend-project-44/maintainability)
 
 Демонстрационный проект: Brain-even
-https://asciinema.org/a/PkOpJOqHr9QKZnbZ5KiByBRln
+
+```bash
+ brain-even
+```
+<a href="https://asciinema.org/a/PkOpJOqHr9QKZnbZ5KiByBRln" target="_blank"><img src="https://asciinema.org/a/562722.svg" /></a>
+
 
 Демонстрационный проект: Brain-calculator
 https://asciinema.org/a/CRo7MwaESzBc1Fd7v3Z0d6Grb
