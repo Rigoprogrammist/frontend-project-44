@@ -24,4 +24,4 @@ const runGCDGame = () => {
   const firstmessage = 'Find the greatest common divisor of given numbers.';
   return startbraingame(firstmessage, gametype);
 };
-runGCDGame();
+export default runGCDGame;

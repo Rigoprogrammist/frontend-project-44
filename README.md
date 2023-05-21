@@ -26,11 +26,9 @@ git clone https://github.com/Rigoprogrammist/frontend-project-44
 make install
 npm install
 npm link
-
-npm link
 ```
 
-## как начать играть:
+
 
 Демонстрационный проект: Brain-even
 
