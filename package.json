@@ -1,10 +1,6 @@
 {
   "name": "@hexlet/code",
-  "dependencies": {
-    "node": "^19.6.1",
-    "readline-sync": "^1.4.10"
-  },
-  "description": "[![Actions Status](https://github.com/Rigoprogrammist/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Rigoprogrammist/frontend-project-44/actions)",
+  "description": "frontend-project-44 Hexlet",
   "version": "1.0.0",
   "type": "module",
   "bin": {
@@ -15,7 +11,10 @@
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
   },
-  "main": "index.js",
+  "dependencies": {
+    "node": "^19.6.1",
+    "readline-sync": "^1.4.10"
+  },
   "devDependencies": {
     "eslint": "^8.39.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -31,7 +30,7 @@
     "type": "git",
     "url": "git+https://github.com/Rigoprogrammist/frontend-project-44.git"
   },
-  "author": "",
+  "author": "Vladimir Garmonshikov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Rigoprogrammist/frontend-project-44/issues"

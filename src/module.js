@@ -1,21 +1,52 @@
 #!/usr/bin/env node
+import readlineSync from 'readline-sync';
 
-const isCheckRound = (theAnswer, enteredResponse, name, roundtimer) => {
-  let result = true;
-  if (roundtimer >= 3 && theAnswer === enteredResponse) {
+const greeting = () => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+  return userName;
+};
+
+const isCheckRound = (thecorrectAnswer, enteredResponse, name, roundtimer) => {
+  let boolean = true;
+  if (roundtimer >= 3 && thecorrectAnswer === enteredResponse) {
     console.log('Correct!');
     console.log(`Congratulations, ${name}!`);
-    return result;
+    return boolean;
   }
-  if (theAnswer === enteredResponse) {
+  if (thecorrectAnswer === enteredResponse) {
     console.log('Correct!');
-    return result;
+    return boolean;
   }
-  result = false;
+  boolean = false;
   console.log(
-    `'${enteredResponse}' is wrong answer ;(. Correct answer was '${theAnswer}'.`,
+    `'${enteredResponse}' is wrong answer ;(. Correct answer was '${thecorrectAnswer}'.`,
   );
   console.log(`Let's try again, ${name}!`);
-  return result;
+  return boolean;
 };
-export default isCheckRound;
+
+const startbraingame = (firstmessage, gametype) => {
+  let arraygamelogic;
+  const name = greeting();
+  console.log(firstmessage);
+  for (let roundtimer = 1; roundtimer <= 3; roundtimer += 1) {
+    arraygamelogic = gametype();
+    console.log(`Question: ${arraygamelogic[0]}`);
+    const thecorrectAnswer = arraygamelogic[1];
+    const enteredResponse = readlineSync.question(
+      'Your answer: ',
+    );
+    const boolean = isCheckRound(
+      thecorrectAnswer,
+      enteredResponse,
+      name,
+      roundtimer,
+    );
+    if (boolean === false) {
+      break;
+    }
+  }
+};
+export default startbraingame;

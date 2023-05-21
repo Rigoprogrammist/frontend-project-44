@@ -1,39 +1,23 @@
 #!/usr/bin/env node
+import startbraingame from '../module.js';
+import { randomNum } from '../utils.js';
 
-import readlineSync from 'readline-sync';
-import greeting from '../cli.js';
-import isCheckRound from '../module.js';
-
-const isEven = (num) => {
-  if (num % 2 === 0) {
-    return true;
-  }
-  return false;
+const startevengame = () => {
+  let result = [];
+  const question = randomNum(1, 100);
+  const isEven = (number) => number % 2 === 0;
+  const thecorrectAnswer = isEven(question) ? 'yes' : 'no';
+  result = [question, thecorrectAnswer];
+  return result;
 };
 
-const firstmessage = 'Answer "yes" if the number is even, otherwise answer "no".';
-
-const even = () => {
-  const name = greeting();
-  console.log(firstmessage);
-  for (let roundtimer = 1; roundtimer <= 3; roundtimer += 1) {
-    const RandomNum = Math.floor(Math.random() * 100);
-    const QuestionNumber = RandomNum;
-    const theAnswer = isEven(QuestionNumber) ? 'yes' : 'no';
-    console.log(`Question: ${QuestionNumber}`);
-    const enteredResponse = readlineSync.question(
-      'Your answer: ',
-    );
-    const result = isCheckRound(
-      theAnswer,
-      enteredResponse,
-      name,
-      roundtimer,
-    );
-    if (result === false) {
-      break;
-    }
-  }
+const gametype = () => {
+  const typegame = startevengame();
+  return typegame;
 };
 
-export default even;
+const runEvenGame = () => {
+  const firstmessage = 'Answer "yes" if the number is even, otherwise answer "no".';
+  return startbraingame(firstmessage, gametype);
+};
+export default runEvenGame;

@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import GCdivisor from '../src/games/gcd-programm.js';
+import runGCDGame from '../src/games/gcd-programm.js';
 
-GCdivisor();
+runGCDGame();

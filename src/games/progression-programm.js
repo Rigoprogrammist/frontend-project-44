@@ -1,41 +1,28 @@
 #!/usr/bin/env node
 /* eslint-disable no-alert, no-console */
-import readlineSync from 'readline-sync';
-import greeting from '../cli.js';
-import isCheckRound from '../module.js';
+import startbraingame from '../module.js';
+import { randomNum, makeProgression } from '../utils.js';
 
-const firstmessage = 'What number is missing in the progression?';
+const startProgressiongame = () => {
+  let result = [];
+  const startprogression = makeProgression();
+  const hiddenElement = randomNum(0, startprogression.length - 1);
+  const response = String(startprogression[hiddenElement]);
+  const thecorrectAnswer = response;
+  startprogression[hiddenElement] = '..';
+  const question = startprogression.join(' ');
 
-const Progression = () => {
-  const ourProgressionArr = [];
-  const RandomNum1 = Math.floor(Math.random() * 10);
-  const startPoint = RandomNum1;
-  const step = RandomNum1;
-  const length = Math.floor(Math.random() * (10 - 5 + 1) + 5);
-  for (let i = 0; i < length; i += 1) {
-    ourProgressionArr.push(startPoint + step * i);
-  }
-  return ourProgressionArr;
+  result = [question, thecorrectAnswer];
+  return result;
 };
 
-const progressionGame = () => {
-  const name = greeting();
-  console.log(firstmessage);
-  for (let roundtimer = 1; roundtimer <= 3; roundtimer += 1) {
-    const startprogression = Progression();
-    const max = startprogression.length - 1;
-    const hiddenElement = Math.floor(Math.random() * (max - 0 + 1) + 0);
-    const response = startprogression[hiddenElement];
-    const theAnswer = response;
-    startprogression[hiddenElement] = '..';
-    const task = startprogression.join(' ');
-    console.log(`Question: ${task}`);
-    const enteredResponse = readlineSync.question('Your answer: ');
-    const result = isCheckRound(theAnswer, +enteredResponse, name, roundtimer);
-    if (result === false) {
-      break;
-    }
-  }
+const gametype = () => {
+  const typegame = startProgressiongame();
+  return typegame;
 };
 
-export default progressionGame;
+const runProgressiongame = () => {
+  const firstmessage = 'What number is missing in the progression?';
+  return startbraingame(firstmessage, gametype);
+};
+export default runProgressiongame;
